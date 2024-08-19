@@ -80,10 +80,10 @@ void dlt(vector<int>& vec, int delElem) {
 }
 
 int search(const vector<int>& vec, int elem) {
-    auto it = find(vec.begin(), vec.end(), elem);
-    if (it != vec.end()) {
-        return distance(vec.begin(), it);
-    } else {
-        return -1;
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i] == elem) {
+            return i;
+        }
     }
+    return -1;
 }
