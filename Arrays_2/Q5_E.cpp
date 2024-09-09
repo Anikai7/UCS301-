@@ -13,21 +13,19 @@ int main() {
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j <= i; j++) {
-            int val;
-            cout << "Enter Element (" << i + 1 << ", " << j + 1 << "): ";
-            cin >> val;
-            matrix[i].push_back(val);
+            cout << "Enter element at (" << i + 1 << ", " << j + 1 << "): ";
+            cin >> symmetric[k++];
         }
     }
 
-    cout << "The symmetric matrix is: "<<endl;
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
+    cout << "\nThe symmetric matrix is:\n";
+    k = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             if (j <= i) {
-               
-                cout << matrix[i][j] << " ";
+                cout << symmetric[(i * (i + 1)) / 2 + j] << " ";
             } else {
-                cout << matrix[j][i] << " ";
+                cout << symmetric[(j * (j + 1)) / 2 + i] << " ";
             }
         }
         cout << endl;
@@ -35,4 +33,5 @@ int main() {
 
     return 0;
 }
+
 
