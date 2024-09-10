@@ -4,14 +4,14 @@
 using namespace std;
 
 int main() {
-    int dim;
-
+    int n;
     cout << "Enter the dimension of the symmetric matrix: ";
-    cin >> dim;
+    cin >> n;
 
-    vector<vector<int>> matrix(dim);
+    vector<int> symmetric(n * (n + 1) / 2);
 
-    for (int i = 0; i < dim; i++) {
+    int k = 0;
+    for (int i = 0; i < n; i++) {
         for (int j = 0; j <= i; j++) {
             cout << "Enter element at (" << i + 1 << ", " << j + 1 << "): ";
             cin >> symmetric[k++];

@@ -3,6 +3,7 @@
         "*.cpp": "cpp",
         "*.py": "python",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "stack": "cpp"
     }
 }

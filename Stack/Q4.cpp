@@ -1,44 +1,44 @@
-#include<iostream>
+#include <iostream>
 #include <stack>
 
 using namespace std;
 
-int main(){
+int main()
+{
 
     string usr_inpt;
-    cin>>usr_inpt;
+    cin >> usr_inpt;
 
     stack<char> op;
-    stack<int> num;
 
-    for(auto i:usr_inpt){
-        if(i>='0' && i<='9'){
-            num.push(((int)i)-48);
-        }else{
+    string out;
+
+    for (auto i : usr_inpt)
+    {
+        if (i >= '0' && i <= '9')
+        {
+            out.push_back(i);
+        }
+        else
+        {
             op.push(i);
         }
     }
 
-    int ans=num.top();
-    num.pop();
+    stack<int> op2;
 
-    while(!op.empty()){
-        char oper = op.top();
+    while (!op.empty())
+    {
+        char tem = op.top();
         op.pop();
-        int a = num.top();
-        num.pop();
-        if(oper == '+'){
-            ans+=a;
-        }else if(oper == '-'){
-            ans-=a;  
-        }else if(oper == '*'){
-            ans*=a;
-        }else{
-            ans/=a;
-        }
+        op2.push(tem);
     }
 
-    cout<<ans<<endl;
+    while(!op2.empty()){
+        char tem = op2.top();
+        op2.pop();
+        out.push_back(tem);
+    }
 
-    return 0;
+    cout << out << endl;
 }
